@@ -23,21 +23,37 @@ public partial class MainView : Form
         k2.Value = "AAA";
         Debug.WriteLine(k2.ToString());
 
-        KeyValue o1 = new();
+        KeyValueGeneric<int> o1 = new();
         o1.Key = 1;
         o1.Value = 2;
 
-        KeyValue o2 = new();
+        KeyValueGeneric<string> o2 = new();
         o2.Key = 2;
         o2.Value = "BBB";
+        
+        KeyValueGeneric<int> o3 = new();
+        o3.Key = 3;
+        o3.Value = 33;
 
-        //int i1 = Convert.ToInt32(o1.Value);
+        int i1 = Convert.ToInt32(o1.Value);
 
-        //List<KeyValue> keyValues = [o1, o2];
+        List<KeyValueGeneric<int>> keyValues = [o1, o3];
 
-        //foreach(KeyValue kv in keyValues)
-        //{
-        //    Debug.WriteLine(kv.Value);
-        //}
+        foreach(var kv in keyValues)
+        {
+            Debug.WriteLine(kv.Value);
+        }
+
+        KeyValueGeneric<int> g1 = new();
+        g1.Key = 1;
+        g1.Value = 2;
+
+        KeyValueGeneric<string> g2 = new();
+        g2.Key = 2;
+        g2.Value = "CCC";
+
+        KeyValueGeneric<TextBox> g3 = new();
+        g3.Key = 3;
+        g3.Value = new TextBox();
     }
 }
