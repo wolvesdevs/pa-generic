@@ -22,5 +22,13 @@ public partial class MainView : Form
         k2.Key = 2;
         k2.Value = "AAA";
         Debug.WriteLine(k2.ToString());
+
+        KeyValue o1 = new();
+        o1.Key = 1;
+        o1.Value = 2;
+
+        KeyValue o2 = new();
+        o2.Key = 2;
+        o2.Value = "BBB";
     }
 }
