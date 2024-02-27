@@ -1,5 +1,6 @@
 ﻿using Generic.Domain.Helper;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,5 +86,20 @@ public partial class SubView : Form
         {
             Debug.WriteLine($"<s>Id = {item.Id}, Value = {item.Value}");
         }
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        ArrayList a = new();
+        a.Add(1);
+        a.Add("a");
+        a.Add(new Product(1, "a"));
+        var o1 = a[0];
+        
+        Stack s = new();
+        s.Push(1);
+        s.Push("a");
+        s.Push(new Product(1, "a"));
+        var o2 = s.Pop();
     }
 }
