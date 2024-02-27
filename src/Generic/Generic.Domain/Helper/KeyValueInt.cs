@@ -1,9 +1,9 @@
 ﻿namespace Generic.Domain.Helper;
 
-public class KeyValue
+public class KeyValueInt
 {
     public int Key { get; set; }
-    public object? Value { get; set; }
+    public int Value { get; set; }
 
     public override string ToString()
     {
