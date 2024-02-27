@@ -1,4 +1,5 @@
 using Generic.Domain.Helper;
+using System.Diagnostics;
 
 namespace Generic.UI.Views;
 
@@ -12,8 +13,14 @@ public partial class MainView : Form
 
     private void MainView_Load(object sender, EventArgs e)
     {
-        KeyValue k1 = new();
+        KeyValueInt k1 = new();
         k1.Key = 1;
         k1.Value = 2;
+        Debug.WriteLine(k1.ToString());
+        
+        KeyValueString k2 = new();
+        k2.Key = 2;
+        k2.Value = "AAA";
+        Debug.WriteLine(k2.ToString());
     }
 }
