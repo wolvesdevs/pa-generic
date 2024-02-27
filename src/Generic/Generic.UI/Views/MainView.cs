@@ -55,5 +55,9 @@ public partial class MainView : Form
         KeyValueGeneric<TextBox> g3 = new();
         g3.Key = 3;
         g3.Value = new TextBox();
+
+        KeyValueGeneric<int, DateTime> m1 = new();
+        m1.Key = 4;
+        m1.Value = DateTime.Now;
     }
 }

@@ -7,7 +7,6 @@ public class KeyValueGeneric<T>
 
     public int Key { get; set; }
     public T Value { get; set; }
-    public T Value2 { get; set; }
 
     public event Action<T> MyAction;
 
