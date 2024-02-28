@@ -30,7 +30,7 @@ public partial class MainView : Form
         KeyValueGeneric<string> o2 = new();
         o2.Key = 2;
         o2.Value = "BBB";
-        
+
         KeyValueGeneric<int> o3 = new();
         o3.Key = 3;
         o3.Value = 33;
@@ -39,7 +39,7 @@ public partial class MainView : Form
 
         List<KeyValueGeneric<int>> keyValues = [o1, o3];
 
-        foreach(var kv in keyValues)
+        foreach (var kv in keyValues)
         {
             Debug.WriteLine(kv.Value);
         }
