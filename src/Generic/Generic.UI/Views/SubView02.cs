@@ -26,5 +26,7 @@ public partial class SubView02 : Form
 
         E04<Action, Action<int>, DayOfWeek> e04 = new();
         e04.Run(10, DayOfWeek.Monday);
+
+        ClassF<ProductEntity> classF = new();
     }
 }
