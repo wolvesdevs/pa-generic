@@ -11,6 +11,11 @@ public partial class SubView02 : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
+        // 値型制約
         KeyValueA<int> keyValueA = new();
+
+        // 参照型制約
+        KeyValueB<string> keyValueB = new();
+        KeyValueB<Product> keyValueC = new();
     }
 }
