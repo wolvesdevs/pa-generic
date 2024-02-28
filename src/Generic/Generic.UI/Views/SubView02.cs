@@ -24,5 +24,7 @@ public partial class SubView02 : Form
         KeyValueC<int> c2 = new();
         c2.Run();
 
+        E04<Action, Action<int>, DayOfWeek> e04 = new();
+        e04.Run(10, DayOfWeek.Monday);
     }
 }
