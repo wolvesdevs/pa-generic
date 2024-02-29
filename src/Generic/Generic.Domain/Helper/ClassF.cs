@@ -2,7 +2,7 @@
 
 namespace Generic.Domain.Helper;
 
-public class ClassF<T> where T : IEntity, IDisposable
+public class ClassF<T> where T : class, IEntity, IDisposable
 {
 
 }
