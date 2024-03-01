@@ -1,4 +1,5 @@
-﻿using Generic.Domain.Helper;
+﻿using Generic.Domain.Entities;
+using Generic.Domain.Helper;
 using Generic.UI.ViewModels;
 
 namespace Generic.UI.Views;
