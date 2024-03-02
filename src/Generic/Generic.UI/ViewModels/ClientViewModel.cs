@@ -19,5 +19,7 @@ public class ClientViewModel
         ClassH<int?> k11 = new();
         ClassH<Point?> k12 = new();
         ClassH<string?> k13 = new();
+
+        ClassK<ProductEntity, Form> k4 = new();
     }
 }
