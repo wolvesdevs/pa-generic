@@ -34,5 +34,6 @@ public partial class SubView02 : Form
         ClassF<ProductEntity> classF = new();
 
         ClientViewModel.Use();
+
     }
 }
