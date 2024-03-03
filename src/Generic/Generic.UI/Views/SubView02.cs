@@ -1,4 +1,6 @@
-﻿using Generic.Domain.Helper;
+﻿using Generic.Domain.Entities;
+using Generic.Domain.Helper;
+using Generic.UI.ViewModels;
 
 namespace Generic.UI.Views;
 public partial class SubView02 : Form
@@ -30,5 +32,8 @@ public partial class SubView02 : Form
 
         // 副制約（2次制約）_IEntity
         ClassF<ProductEntity> classF = new();
+
+        ClientViewModel.Use();
+
     }
 }
