@@ -22,8 +22,11 @@ public class ClientViewModel
 
         //ClassK<ProductEntity, Form> k4 = new();
 
-        var l1 = new ClassL<int>().GetData();
-        var l2 = new ClassL<bool>().GetData();
-        var l3 = new ClassL<string>().GetData();
+        //var l1 = new ClassL<int>().GetData();
+        //var l2 = new ClassL<bool>().GetData();
+        //var l3 = new ClassL<string>().GetData();
+
+        Msub msub = new();
+        MSub2<string, int> msub2 = new();
     }
 }
