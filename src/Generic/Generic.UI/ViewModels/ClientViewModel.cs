@@ -29,9 +29,13 @@ public class ClientViewModel
         //Msub msub = new();
         //MSub2<string, int> msub2 = new();
 
-        ClassS classS = new();
+        ClassS<int> classS = new();
         classS.Run<int>(1); 
-        classS.Run<string>("ABC"); 
+        classS.Run<string>("ABC");
+
+        // 型推論
+        classS.Run(10);
+        classS.Run("ABC");
 
     }
 }
