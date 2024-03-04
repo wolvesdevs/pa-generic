@@ -26,7 +26,12 @@ public class ClientViewModel
         //var l2 = new ClassL<bool>().GetData();
         //var l3 = new ClassL<string>().GetData();
 
-        Msub msub = new();
-        MSub2<string, int> msub2 = new();
+        //Msub msub = new();
+        //MSub2<string, int> msub2 = new();
+
+        ClassS classS = new();
+        classS.Run<int>(1); 
+        classS.Run<string>("ABC"); 
+
     }
 }
