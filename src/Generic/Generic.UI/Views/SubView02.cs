@@ -34,6 +34,9 @@ public partial class SubView02 : Form
         ClassF<ProductEntity> classF = new();
 
         ClientViewModel.Use();
+        ClientViewModel.Save(new ProductEntity());
+        //ClientViewModel.Save(new StockEntity(1, "abc"));
+
 
     }
 }

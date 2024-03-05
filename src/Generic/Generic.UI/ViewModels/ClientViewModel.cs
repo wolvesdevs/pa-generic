@@ -1,5 +1,6 @@
 ﻿using Generic.Domain.Entities;
 using Generic.Domain.Helper;
+using Generic.Domain.Repositories;
 
 namespace Generic.UI.ViewModels;
 
@@ -30,12 +31,17 @@ public class ClientViewModel
         //MSub2<string, int> msub2 = new();
 
         ClassS<int> classS = new();
-        classS.Run<int>(1); 
+        classS.Run<int>(1);
         classS.Run<string>("ABC");
 
         // 型推論
         classS.Run(10);
         classS.Run("ABC");
+
+    }
+
+    public static void Save<T>(T entity) where T : class, IEntity, IDisposable, new()
+    {
 
     }
 }
