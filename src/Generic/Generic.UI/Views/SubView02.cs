@@ -27,13 +27,24 @@ public partial class SubView02 : Form
         c2.Run();
 
         // C#7.3 以降で使えるようになった型制約
-        E04<Action, Action<int>, DayOfWeek> e04 = new();
-        e04.Run(10, DayOfWeek.Monday);
+        //E04<Action, Action<int>, DayOfWeek> e04 = new();t
+        //e04.Run(10, DayOfWeek.Monday);
 
         // 副制約（2次制約）_IEntity
         ClassF<ProductEntity> classF = new();
 
         ClientViewModel.Use();
+        ClientViewModel.Save(new ProductEntity());
+        //ClientViewModel.Save(new StockEntity(1, "abc"));
+
+        int[] array = [1, 2, 3];
+        ClientViewModel.GetData(array);
+
+        List<int> ints = [1, 2, 3];
+        ClientViewModel.GetData(ints);
+
+        ClientViewModel.AAA(10);
+        ClientViewModel.AAA<int>(10);
 
     }
 }
