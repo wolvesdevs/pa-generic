@@ -43,5 +43,8 @@ public partial class SubView02 : Form
         List<int> ints = [1, 2, 3];
         ClientViewModel.GetData(ints);
 
+        ClientViewModel.AAA(10);
+        ClientViewModel.AAA<int>(10);
+
     }
 }

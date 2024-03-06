@@ -60,4 +60,15 @@ public class ClientViewModel
 
         }
     }
+
+    public static void AAA(int value)
+    {
+
+    }
+
+    public static void AAA<T>(T value)
+    {
+
+    }
+
 }
