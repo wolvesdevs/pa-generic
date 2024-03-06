@@ -44,4 +44,20 @@ public class ClientViewModel
     {
 
     }
+
+    public static void GetData<T>(T[] entities)
+    {
+        foreach (var entity in entities)
+        {
+
+        }
+    }
+
+    public static void GetData<T>(IEnumerable<T> entities)
+    {
+        foreach (var entity in entities)
+        {
+
+        }
+    }
 }
