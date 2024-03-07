@@ -43,6 +43,7 @@ partial class Gen
         button1.TabIndex = 0;
         button1.Text = "product csv";
         button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click;
         // 
         // dataGridView1
         // 
