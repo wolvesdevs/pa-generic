@@ -14,5 +14,6 @@ public partial class Gen : Form
     public Gen()
     {
         InitializeComponent();
+        StartPosition = FormStartPosition.CenterScreen;
     }
 }

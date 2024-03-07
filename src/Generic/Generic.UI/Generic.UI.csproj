@@ -12,4 +12,13 @@
     <ProjectReference Include="..\Generic.Domain\Generic.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Product.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Stock.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
