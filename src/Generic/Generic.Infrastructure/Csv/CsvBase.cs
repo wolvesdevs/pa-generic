@@ -1,9 +1,10 @@
 ﻿using Generic.Domain.Entities;
 using Generic.Domain.Exceptions;
+using Generic.Domain.Repositories;
 
 namespace Generic.Infrastructure.Csv
 {
-    public abstract class CsvBase<T>
+    public abstract class CsvBase<T> where T : IEntity
     {
         public IEnumerable<T> GetAll()
         {
@@ -25,9 +26,9 @@ namespace Generic.Infrastructure.Csv
                     throw new CsvException();
                 }
 
-                var product = GetEntity(items);
-
-                entities.Add(product);
+                var entity = GetEntity(items);
+                
+                entities.Add(entity);
             }
 
             return entities;
