@@ -25,7 +25,7 @@ public partial class Gen : Form
         bool isFirst = true;
         List<ProductEntity> entities = new();
 
-        foreach(var line in lines)
+        foreach (var line in lines)
         {
             if (isFirst)
             {
@@ -34,12 +34,40 @@ public partial class Gen : Form
             }
 
             var items = line.Split(',');
-            if(items.Length != 3)
+            if (items.Length != 3)
             {
                 throw new CsvException();
             }
 
             ProductEntity product = new(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
+
+            entities.Add(product);
+        }
+
+        dataGridView1.DataSource = entities;
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        var lines = File.ReadAllLines("Stock.csv");
+        bool isFirst = true;
+        List<StockEntity> entities = new();
+
+        foreach (var line in lines)
+        {
+            if (isFirst)
+            {
+                isFirst = false;
+                continue;
+            }
+
+            var items = line.Split(',');
+            if (items.Length != 2)
+            {
+                throw new CsvException();
+            }
+
+            StockEntity product = new(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
 
             entities.Add(product);
         }
