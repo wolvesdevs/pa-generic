@@ -74,3 +74,24 @@ public class Product(int id, string name) : IEntity
     public int Id { get; set; }
     public string Name { get; set; }
 }
+
+public static class ActionUse
+{
+    private static void Use()
+    {
+        Action<object> oo = CallbackObj;
+        oo.Invoke(DateTime.Now);
+
+        Action<string> ss = CallbackString;
+        ss.Invoke("Hello");
+
+        //Action<object> os = CallbackString;
+        //os.Invoke(DateTime.Now);
+
+        Action<string> so = CallbackObj;
+        so.Invoke("Hello");
+    }
+
+    private static void CallbackObj(object o) { }
+    private static void CallbackString(string s) { }
+ }
