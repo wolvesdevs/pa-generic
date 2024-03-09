@@ -10,6 +10,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Generic.Domain\Generic.Domain.csproj" />
+    <ProjectReference Include="..\Generic.Infrastructure\Generic.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Product.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Stock.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
