@@ -1,3 +1,5 @@
+using Generic.Domain.Entities;
+
 namespace Generic.UI.Views;
 
 internal static class Program
@@ -20,7 +22,12 @@ public interface IRead<out T>
     T GetData(int index);
 }
 
-public class Entities<T> : IRead<T>
+public interface IWrite<in T>
+{
+    void Add(T entity);
+}
+
+public class Entities<T> : IRead<T>, IWrite<T>
 {
     private List<T> _entities = new();
 
@@ -44,9 +51,20 @@ public class Use
         Read(products);
     }
 
-    private static void Read(IRead<IEntity> entities)
+    private static void Read(IRead<IEntity> read)
     {
-        var val = entities.GetData(0);
+        var val = read.GetData(0);
+    }
+
+    public static void UseB()
+    {
+        Entities<IEntity> list = new();
+        WriteProduct(list);
+    }
+
+    private static void WriteProduct(IWrite<Product> write)
+    {
+        write.Add(new Product(2, "B"));
     }
 }
 
