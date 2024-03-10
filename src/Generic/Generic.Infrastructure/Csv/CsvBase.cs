@@ -4,7 +4,7 @@ using Generic.Domain.Repositories;
 
 namespace Generic.Infrastructure.Csv
 {
-    public abstract class CsvBase<T>
+    public abstract class CsvBase<T> where T : IEntity
     {
         public IEnumerable<T> GetAll()
         {
