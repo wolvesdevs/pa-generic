@@ -52,7 +52,7 @@ partial class Gen
         dataGridView1.Name = "dataGridView1";
         dataGridView1.RowHeadersWidth = 62;
         dataGridView1.Size = new Size(698, 314);
-        dataGridView1.TabIndex = 1;
+        dataGridView1.TabIndex = 2;
         // 
         // button2
         // 
@@ -60,7 +60,7 @@ partial class Gen
         button2.Location = new Point(304, 12);
         button2.Name = "button2";
         button2.Size = new Size(259, 72);
-        button2.TabIndex = 2;
+        button2.TabIndex = 1;
         button2.Text = "stock csv";
         button2.UseVisualStyleBackColor = true;
         button2.Click += button2_Click;

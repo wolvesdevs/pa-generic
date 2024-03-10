@@ -4,17 +4,17 @@ namespace Generic.Infrastructure.Csv;
 
 public class ProductCsv : CsvBase<ProductEntity>
 {
-    protected override ProductEntity GetEntity(string[] items)
+    public override ProductEntity GetEntity(string[] items)
     {
         return new ProductEntity(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
     }
 
-    protected override int GetItemCount()
+    public override int GetItemLength()
     {
         return 3;
     }
 
-    protected override string GetPath()
+    public override string GetPath()
     {
         return "Product.csv";
     }

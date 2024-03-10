@@ -10,7 +10,7 @@ namespace Generic.Infrastructure.Csv
         {
             var lines = File.ReadAllLines(GetPath());
             bool isFirst = true;
-            List<T> entities = new();
+            List<T> enitties = new();
 
             foreach (var line in lines)
             {
@@ -21,21 +21,20 @@ namespace Generic.Infrastructure.Csv
                 }
 
                 var items = line.Split(',');
-                if (items.Length != GetItemCount())
+                if (items.Length != GetItemLength())
                 {
-                    throw new CsvException();
+                    throw new Exception("Invalid file format");
                 }
 
                 var entity = GetEntity(items);
-                
-                entities.Add(entity);
+                enitties.Add(entity);
             }
 
-            return entities;
+            return enitties;
         }
 
-        protected abstract string GetPath();
-        protected abstract int GetItemCount();
-        protected abstract T GetEntity(string[] items);
+        public abstract string GetPath();
+        public abstract int GetItemLength();
+        public abstract T GetEntity(string[] items);
     }
 }
