@@ -22,13 +22,19 @@ public partial class Gen : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
-        ProductCsv productCsv = new();
+        //ProductCsv productCsv = new();
+        //dataGridView1.DataSource = productCsv.GetAll();
+
+        ProductCsv2 productCsv = new();
         dataGridView1.DataSource = productCsv.GetAll();
     }
 
     private void button2_Click(object sender, EventArgs e)
     {
-        StockCsv stockCsv = new();
+        //StockCsv stockCsv = new();
+        //dataGridView1.DataSource = stockCsv.GetAll();
+
+        StockCsv2 stockCsv = new();
         dataGridView1.DataSource = stockCsv.GetAll();
     }
 
