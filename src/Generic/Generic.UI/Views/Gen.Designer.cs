@@ -28,51 +28,77 @@ partial class Gen
     /// </summary>
     private void InitializeComponent()
     {
-        button1 = new Button();
+        ProductCsv1Button = new Button();
         dataGridView1 = new DataGridView();
-        button2 = new Button();
+        StockCsv1Button = new Button();
+        ProductCsv2Button = new Button();
+        StockCsv2Button = new Button();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
-        // button1
+        // ProductCsv1Button
         // 
-        button1.Font = new Font("Yu Gothic UI", 16F);
-        button1.Location = new Point(12, 12);
-        button1.Name = "button1";
-        button1.Size = new Size(259, 72);
-        button1.TabIndex = 0;
-        button1.Text = "product csv";
-        button1.UseVisualStyleBackColor = true;
-        button1.Click += button1_Click;
+        ProductCsv1Button.Font = new Font("Yu Gothic UI", 16F);
+        ProductCsv1Button.Location = new Point(12, 12);
+        ProductCsv1Button.Name = "ProductCsv1Button";
+        ProductCsv1Button.Size = new Size(259, 72);
+        ProductCsv1Button.TabIndex = 0;
+        ProductCsv1Button.Text = "product csv1";
+        ProductCsv1Button.UseVisualStyleBackColor = true;
+        ProductCsv1Button.Click += ProductCsv1Button_Click;
         // 
         // dataGridView1
         // 
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Location = new Point(12, 104);
+        dataGridView1.Location = new Point(12, 188);
         dataGridView1.Name = "dataGridView1";
         dataGridView1.RowHeadersWidth = 62;
-        dataGridView1.Size = new Size(698, 314);
-        dataGridView1.TabIndex = 2;
+        dataGridView1.Size = new Size(551, 314);
+        dataGridView1.TabIndex = 99;
         // 
-        // button2
+        // StockCsv1Button
         // 
-        button2.Font = new Font("Yu Gothic UI", 16F);
-        button2.Location = new Point(304, 12);
-        button2.Name = "button2";
-        button2.Size = new Size(259, 72);
-        button2.TabIndex = 1;
-        button2.Text = "stock csv";
-        button2.UseVisualStyleBackColor = true;
-        button2.Click += button2_Click;
+        StockCsv1Button.Font = new Font("Yu Gothic UI", 16F);
+        StockCsv1Button.Location = new Point(304, 12);
+        StockCsv1Button.Name = "StockCsv1Button";
+        StockCsv1Button.Size = new Size(259, 72);
+        StockCsv1Button.TabIndex = 1;
+        StockCsv1Button.Text = "stock csv1";
+        StockCsv1Button.UseVisualStyleBackColor = true;
+        StockCsv1Button.Click += StockCsv1Button_Click;
+        // 
+        // ProductCsv2Button
+        // 
+        ProductCsv2Button.Font = new Font("Yu Gothic UI", 16F);
+        ProductCsv2Button.Location = new Point(12, 90);
+        ProductCsv2Button.Name = "ProductCsv2Button";
+        ProductCsv2Button.Size = new Size(259, 72);
+        ProductCsv2Button.TabIndex = 2;
+        ProductCsv2Button.Text = "product csv2";
+        ProductCsv2Button.UseVisualStyleBackColor = true;
+        ProductCsv2Button.Click += this.ProductCsv2Button_Click;
+        // 
+        // StockCsv2Button
+        // 
+        StockCsv2Button.Font = new Font("Yu Gothic UI", 16F);
+        StockCsv2Button.Location = new Point(304, 90);
+        StockCsv2Button.Name = "StockCsv2Button";
+        StockCsv2Button.Size = new Size(259, 72);
+        StockCsv2Button.TabIndex = 3;
+        StockCsv2Button.Text = "stock csv2";
+        StockCsv2Button.UseVisualStyleBackColor = true;
+        StockCsv2Button.Click += StockCsv2Button_Click;
         // 
         // Gen
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
-        Controls.Add(button2);
+        ClientSize = new Size(574, 513);
+        Controls.Add(StockCsv2Button);
+        Controls.Add(ProductCsv2Button);
+        Controls.Add(StockCsv1Button);
         Controls.Add(dataGridView1);
-        Controls.Add(button1);
+        Controls.Add(ProductCsv1Button);
         Name = "Gen";
         Text = "Gen";
         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -81,7 +107,9 @@ partial class Gen
 
     #endregion
 
-    private Button button1;
+    private Button ProductCsv1Button;
     private DataGridView dataGridView1;
-    private Button button2;
+    private Button StockCsv1Button;
+    private Button ProductCsv2Button;
+    private Button StockCsv2Button;
 }
