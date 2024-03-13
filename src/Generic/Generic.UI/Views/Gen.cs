@@ -1,6 +1,7 @@
 ﻿using Generic.Domain.Entities;
 using Generic.Domain.Exceptions;
 using Generic.Infrastructure.Csv;
+using Generic.Infrastructure.Csv.ForAbstractClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,32 +29,31 @@ public partial class Gen : Form
     /// <exception cref="CsvException"></exception>
     private void ProductCsv1Button_Click(object sender, EventArgs e)
     {
-        var lines = File.ReadAllLines("Product.csv");
-        bool isFirst = true;
-        List<ProductEntity> entities = new();
+        //var lines = File.ReadAllLines("Product.csv");
+        //bool isFirst = true;
+        //List<ProductEntity> entities = new();
 
-        foreach (var line in lines)
-        {
-            if (isFirst)
-            {
-                isFirst = false;
-                continue;
-            }
+        //foreach (var line in lines)
+        //{
+        //    if (isFirst)
+        //    {
+        //        isFirst = false;
+        //        continue;
+        //    }
 
-            var items = line.Split(',');
-            if (items.Length != 3)
-            {
-                throw new CsvException();
-            }
+        //    var items = line.Split(',');
+        //    if (items.Length != 3)
+        //    {
+        //        throw new CsvException();
+        //    }
 
-            ProductEntity product = new(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
+        //    ProductEntity product = new(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
 
-            entities.Add(product);
-        }
+        //    entities.Add(product);
+        //}
 
-        dataGridView1.DataSource = entities;
-
-
+        ProductCsv1 productCsv1 = new();
+        dataGridView1.DataSource = productCsv1.GetAll();
     }
 
     /// <summary>
@@ -64,32 +64,33 @@ public partial class Gen : Form
     /// <exception cref="CsvException"></exception>
     private void StockCsv1Button_Click(object sender, EventArgs e)
     {
-        var lines = File.ReadAllLines("Stock.csv");
-        bool isFirst = true;
-        List<StockEntity> entities = new();
+        //var lines = File.ReadAllLines("Stock.csv");
+        //bool isFirst = true;
+        //List<StockEntity> entities = new();
 
-        foreach (var line in lines)
-        {
-            if (isFirst)
-            {
-                isFirst = false;
-                continue;
-            }
+        //foreach (var line in lines)
+        //{
+        //    if (isFirst)
+        //    {
+        //        isFirst = false;
+        //        continue;
+        //    }
 
-            var items = line.Split(',');
-            if (items.Length != 2)
-            {
-                throw new CsvException();
-            }
+        //    var items = line.Split(',');
+        //    if (items.Length != 2)
+        //    {
+        //        throw new CsvException();
+        //    }
 
-            StockEntity product = new(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
+        //    StockEntity product = new(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
 
-            entities.Add(product);
-        }
+        //    entities.Add(product);
+        //}
 
-        dataGridView1.DataSource = entities;
+        //dataGridView1.DataSource = entities;
 
-
+        StockCsv1 stockCsv = new();
+        dataGridView1.DataSource = stockCsv.GetAll();
     }
 
     /// <summary>
