@@ -2,9 +2,27 @@
 
 namespace Generic.Infrastructure.Csv.ForAbstractClass;
 
-public class ProductCsv1
+public class ProductCsv1 : CsvBase<ProductEntity>
 {
+    public IEnumerable GetAll()
+    {
+        return 
+    }
 
+    public override ProductEntity GetEntity()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override string GetFilePath()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override int GetItemLength()
+    {
+        throw new NotImplementedException();
+    }
 }
 
 //public class ProductCsv1 : CsvBase<ProductEntity>
