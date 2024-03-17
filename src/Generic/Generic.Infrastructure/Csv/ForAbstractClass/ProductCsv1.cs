@@ -1,27 +1,23 @@
 ﻿using Generic.Domain.Entities;
+using System.Diagnostics.Tracing;
 
 namespace Generic.Infrastructure.Csv.ForAbstractClass;
 
 public class ProductCsv1 : CsvBase<ProductEntity>
 {
-    public IEnumerable GetAll()
+    public override ProductEntity GetEntity(string[] items)
     {
-        return 
-    }
-
-    public override ProductEntity GetEntity()
-    {
-        throw new NotImplementedException();
+        return new ProductEntity(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
     }
 
     public override string GetFilePath()
     {
-        throw new NotImplementedException();
+        return "Product.csv";
     }
 
     public override int GetItemLength()
     {
-        throw new NotImplementedException();
+        return 3;
     }
 }
 

@@ -6,10 +6,9 @@ namespace Generic.Infrastructure.Csv
 {
     public abstract class CsvBase<T>
     {
-        public IEnumerable GetAll()
+        public IEnumerable<T> GetAll()
         {
             var lines = File.ReadAllLines(GetFilePath());
-            //var lines = File.ReadAllLines("Product.csv");
             bool isFirst = true;
             List<T> entities = new();
 
@@ -23,14 +22,13 @@ namespace Generic.Infrastructure.Csv
 
                 var items = line.Split(',');
                 if (items.Length != GetItemLength())
-                //if (items.Length != 3)
                 {
                     throw new CsvException();
                 }
 
-                //ProductEntity product = new(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
+                var entity = GetEntity(items);
 
-                entities.Add(GetEntity());
+                entities.Add(entity);
             }
 
             return entities;
@@ -38,7 +36,7 @@ namespace Generic.Infrastructure.Csv
 
         public abstract string GetFilePath();
         public abstract int GetItemLength();
-        public abstract T GetEntity();
+        public abstract T GetEntity(string[] items);
     }
 
     //public abstract class CsvBase<T> where T : IEntity
