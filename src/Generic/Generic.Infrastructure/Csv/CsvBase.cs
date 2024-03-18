@@ -2,74 +2,76 @@
 using Generic.Domain.Exceptions;
 using Generic.Domain.Repositories;
 
-namespace Generic.Infrastructure.Csv
+namespace Generic.Infrastructure.Csv;
+
+public abstract class CsvBase<T> where T : IEntity
 {
-    public abstract class CsvBase<T>
+    public abstract string FilePath { get; }
+    public abstract int ItemLength { get; }
+
+    public IEnumerable<T> GetAll()
     {
-        public IEnumerable<T> GetAll()
+        var lines = File.ReadAllLines(FilePath);
+        bool isFirst = true;
+        List<T> entities = new();
+
+        foreach (var line in lines)
         {
-            var lines = File.ReadAllLines(GetFilePath());
-            bool isFirst = true;
-            List<T> entities = new();
-
-            foreach (var line in lines)
+            if (isFirst)
             {
-                if (isFirst)
-                {
-                    isFirst = false;
-                    continue;
-                }
-
-                var items = line.Split(',');
-                if (items.Length != GetItemLength())
-                {
-                    throw new CsvException();
-                }
-
-                var entity = GetEntity(items);
-
-                entities.Add(entity);
+                isFirst = false;
+                continue;
             }
 
-            return entities;
+            var items = line.Split(',');
+            if (items.Length != ItemLength)
+            {
+                throw new CsvException();
+            }
+
+            var entity = GetEntity(items);
+
+            entities.Add(entity);
         }
 
-        public abstract string GetFilePath();
-        public abstract int GetItemLength();
-        public abstract T GetEntity(string[] items);
+        return entities;
     }
 
-    //public abstract class CsvBase<T> where T : IEntity
-    //{
-    //    public IEnumerable<T> GetAll()
-    //    {
-    //        var lines = File.ReadAllLines(GetPath());
-    //        bool isFirst = true;
-    //        List<T> enitties = new();
-
-    //        foreach (var line in lines)
-    //        {
-    //            if (isFirst)
-    //            {
-    //                isFirst = false;
-    //                continue;
-    //            }
-
-    //            var items = line.Split(',');
-    //            if (items.Length != GetItemLength())
-    //            {
-    //                throw new Exception("Invalid file format");
-    //            }
-
-    //            var entity = GetEntity(items);
-    //            enitties.Add(entity);
-    //        }
-
-    //        return enitties;
-    //    }
-
-    //    public abstract string GetPath();
-    //    public abstract int GetItemLength();
-    //    public abstract T GetEntity(string[] items);
-    //}
+    public abstract T GetEntity(string[] items);
 }
+
+//public abstract class CsvBase<T> where T : IEntity
+//{
+//    public abstract string FilePath { get; }
+//    public abstract int ItemLength { get; }
+
+//    public IEnumerable<T> GetAll()
+//    {
+//        var lines = File.ReadAllLines(FilePath);
+//        bool isFirst = true;
+//        List<T> entities = new();
+
+//        foreach (var line in lines)
+//        {
+//            if (isFirst)
+//            {
+//                isFirst = false;
+//                continue;
+//            }
+
+//            var items = line.Split(',');
+//            if (items.Length != ItemLength)
+//            {
+//                throw new CsvException();
+//            }
+
+//            var entity = GetEntity(items);
+
+//            entities.Add(entity);
+//        }
+
+//        return entities;
+//    }
+
+//    public abstract T GetEntity(string[] items);
+//}
