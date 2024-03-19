@@ -1,5 +1,4 @@
 ﻿using Generic.Domain.Entities;
-using System.Diagnostics.Tracing;
 
 namespace Generic.Infrastructure.Csv.ForAbstractClass;
 

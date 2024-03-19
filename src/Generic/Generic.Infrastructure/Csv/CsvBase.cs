@@ -13,7 +13,7 @@ public abstract class CsvBase<T> where T : IEntity
     {
         var lines = File.ReadAllLines(FilePath);
         bool isFirst = true;
-        List<T> entities = new();
+        List<T> entities = [];
 
         foreach (var line in lines)
         {
