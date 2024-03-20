@@ -6,17 +6,21 @@ public class StockCsv2
 {
     public IEnumerable<StockEntity> GetAll()
     {
-        return CsvHelper.GetAll("Stock.csv", 2, (string[] items) =>
-            new StockEntity(Convert.ToInt32(items[0]), Convert.ToInt32(items[1])));
+        return CsvHelper.GetAll("Stock.csv", 2, items => new StockEntity(Convert.ToInt32(items[0]), Convert.ToInt32(items[1])));
     }
+
+    //public IEnumerable<StockEntity> GetAll()
+    //{
+    //    return CsvHelper.GetAll("Stock.csv", 2, items => new StockEntity(Convert.ToInt32(items[0]), Convert.ToInt32(items[1])));
+    //}
 
     //public IEnumerable<StockEntity> GetAll()
     //{
     //    return CsvHelper.GetAll("Stock.csv", 2, GetEntity);
     //}
 
-    //public StockEntity GetEntity(string[] items)
+    //private StockEntity GetEntity(string[] items)
     //{
-    //    return new StockEntity(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
+    //    return new(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
     //}
 }

@@ -5,11 +5,11 @@ namespace Generic.Infrastructure.Csv;
 
 public static class CsvHelper
 {
-    public static IEnumerable<T> GetAll<T>(string filePath, int itemLength, Func<string[], T> func)
+    public static IEnumerable<T> GetAll<T>(string filePath, int itemCount, Func<string[], T> func)
     {
         var lines = File.ReadAllLines(filePath);
         bool isFirst = true;
-        List<T> entities = new();
+        List<T> entities = [];
 
         foreach (var line in lines)
         {
@@ -20,20 +20,19 @@ public static class CsvHelper
             }
 
             var items = line.Split(',');
-            if (items.Length != itemLength)
+
+            if (items.Length != itemCount)
             {
                 throw new CsvException();
             }
 
-            T entity = func(items);
-
-            entities.Add(entity);
+            entities.Add(func(items));
         }
 
         return entities;
     }
 
-    //public static IEnumerable<T> GetAll<T>(string path, int item, Func<string[], T> func)
+    //public static IEnumerable<T> GetAll<T>(string path, int itemCount, Func<string[], T> func)
     //{
     //    var lines = File.ReadAllLines(path);
     //    bool isFirst = true;
@@ -48,7 +47,7 @@ public static class CsvHelper
     //        }
 
     //        var items = line.Split(',');
-    //        if (items.Length != item)
+    //        if (items.Length != itemCount)
     //        {
     //            throw new Exception("Invalid file format");
     //        }
