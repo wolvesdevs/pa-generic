@@ -1,12 +1,37 @@
-﻿using Generic.Domain.Exceptions;
+﻿using Generic.Domain.Entities;
+using Generic.Domain.Exceptions;
 
 namespace Generic.Infrastructure.Csv;
 
 public static class CsvHelper
 {
+    public static IEnumerable<T> GetAll<T>(string filePath, int itemCount, Func<string[], T> func)
+    {
+        var lines = File.ReadAllLines(filePath);
+        bool isFirst = true;
+        List<T> entities = [];
 
+        foreach (var line in lines)
+        {
+            if (isFirst)
+            {
+                isFirst = false;
+                continue;
+            }
 
-    //public static IEnumerable<T> GetAll<T>(string path, int item, Func<string[], T> func)
+            var items = line.Split(',');
+            if (items.Length != itemCount)
+            {
+                throw new CsvException();
+            }
+
+            entities.Add(func(items));
+        }
+
+        return entities;
+    }
+
+    //public static IEnumerable<T> GetAll<T>(string path, int itemCount, Func<string[], T> func)
     //{
     //    var lines = File.ReadAllLines(path);
     //    bool isFirst = true;
@@ -21,7 +46,7 @@ public static class CsvHelper
     //        }
 
     //        var items = line.Split(',');
-    //        if (items.Length != item)
+    //        if (items.Length != itemCount)
     //        {
     //            throw new Exception("Invalid file format");
     //        }
