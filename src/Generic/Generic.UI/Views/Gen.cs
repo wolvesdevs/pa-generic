@@ -53,6 +53,8 @@ public partial class Gen : Form
         //    entities.Add(product);
         //}
 
+        //dataGridView1.DataSource = entities;
+
         ProductCsv1 productCsv1 = new();
         dataGridView1.DataSource = productCsv1.GetAll();
     }
@@ -90,8 +92,8 @@ public partial class Gen : Form
 
         //dataGridView1.DataSource = entities;
 
-        StockCsv1 stockCsv = new();
-        dataGridView1.DataSource = stockCsv.GetAll();
+        StockCsv1 stockCsv1 = new();
+        dataGridView1.DataSource = stockCsv1.GetAll();
     }
 
     /// <summary>
@@ -164,7 +166,6 @@ public partial class Gen : Form
 
         StockCsv2 stockCsv2 = new();
         dataGridView1.DataSource = stockCsv2.GetAll();
-
     }
 
     //private void button1_Click(object sender, EventArgs e)
