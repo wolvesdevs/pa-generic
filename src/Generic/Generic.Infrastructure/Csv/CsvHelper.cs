@@ -20,6 +20,7 @@ public static class CsvHelper
             }
 
             var items = line.Split(',');
+
             if (items.Length != itemCount)
             {
                 throw new CsvException();
