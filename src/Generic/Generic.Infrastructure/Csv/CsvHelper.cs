@@ -9,7 +9,7 @@ public static class CsvHelper
     {
         var lines = File.ReadAllLines(filePath);
         bool isFirst = true;
-        List<T> entities = [];
+        List<T> entities = new();
 
         foreach (var line in lines)
         {
@@ -20,13 +20,13 @@ public static class CsvHelper
             }
 
             var items = line.Split(',');
-
             if (items.Length != itemCount)
             {
                 throw new CsvException();
             }
 
-            entities.Add(func(items));
+            var entity = func(items);
+            entities.Add(entity);
         }
 
         return entities;
