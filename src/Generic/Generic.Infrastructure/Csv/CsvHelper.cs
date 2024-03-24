@@ -27,7 +27,6 @@ public static class CsvHelper
             }
 
             var entity = func(items);
-
             entities.Add(entity);
         }
 

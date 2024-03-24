@@ -39,7 +39,6 @@ public abstract class CsvBase<T> where T : IEntity
     public abstract T GetEntity(string[] items);
 }
 
-
 //public abstract class CsvBase<T> where T : IEntity
 //{
 //    public abstract string FilePath { get; }
