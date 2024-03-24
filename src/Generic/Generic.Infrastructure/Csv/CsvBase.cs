@@ -1,5 +1,4 @@
-﻿using Generic.Domain.Entities;
-using Generic.Domain.Exceptions;
+﻿using Generic.Domain.Exceptions;
 using Generic.Domain.Repositories;
 
 namespace Generic.Infrastructure.Csv;
@@ -29,7 +28,9 @@ public abstract class CsvBase<T> where T : IEntity
                 throw new CsvException();
             }
 
-            entities.Add(GetEntity(items));
+            var entity = GetEntity(items);
+
+            entities.Add(entity);
         }
 
         return entities;
