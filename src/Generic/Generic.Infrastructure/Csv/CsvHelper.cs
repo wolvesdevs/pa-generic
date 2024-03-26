@@ -24,7 +24,7 @@ public static class CsvHelper
     //        var items = line.Split(',');
     //        if (items.Length != itemCount)
     //        {
-    //            throw new Exception("Invalid file format");
+    //            throw new CsvException("無効なファイルフォーマットです。");
     //        }
 
     //        var entity = func(items);

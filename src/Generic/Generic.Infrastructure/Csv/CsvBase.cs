@@ -28,7 +28,7 @@ namespace Generic.Infrastructure.Csv;
 //            var items = line.Split(',');
 //            if (items.Length != ItemCount)
 //            {
-//                throw new CsvException();
+//                throw new CsvException("無効なファイルフォーマットです。");
 //            }
 
 //            var entity = GetEntity(items);
