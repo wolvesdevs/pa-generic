@@ -25,12 +25,12 @@ public abstract class CsvBase<T> where T : IEntity
             var items = line.Split(',');
             if (items.Length != ItemCount)
             {
-                throw new CsvException();
+                throw new CsvException("ファイルフォーマットが無効です。");
             }
 
-            var entity = GetEntity(items);
-
-            entities.Add(entity);
+            var product = GetEntity(items);
+            
+            entities.Add(product);
         }
 
         return entities;
