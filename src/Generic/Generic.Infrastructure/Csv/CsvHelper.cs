@@ -23,10 +23,11 @@ public static class CsvHelper
             var items = line.Split(',');
             if (items.Length != itemCount)
             {
-                throw new CsvException();
+                throw new CsvException("ファイルフォーマットが無効です。");
             }
 
             var entity = func(items);
+
             entities.Add(entity);
         }
 
