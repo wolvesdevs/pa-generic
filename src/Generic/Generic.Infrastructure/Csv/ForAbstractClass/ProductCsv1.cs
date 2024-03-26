@@ -1,4 +1,5 @@
 ﻿using Generic.Domain.Entities;
+using Generic.Domain.Exceptions;
 
 namespace Generic.Infrastructure.Csv.ForAbstractClass;
 
