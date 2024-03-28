@@ -1,5 +1,4 @@
-﻿using Generic.Domain.Entities;
-using Generic.Domain.Exceptions;
+﻿using Generic.Domain.Exceptions;
 using Generic.Domain.Repositories;
 using System.Runtime.CompilerServices;
 
@@ -10,7 +9,7 @@ public abstract class CsvBase<T> where T : IEntity
     public abstract string FilePath { get; }
     public abstract int ItemCount { get; }
 
-    public object GetAll()
+    public IEnumerable<T> GetAll()
     {
         var lines = File.ReadAllLines(FilePath);
         bool isFirst = true;
@@ -27,12 +26,12 @@ public abstract class CsvBase<T> where T : IEntity
             var items = line.Split(',');
             if (items.Length != ItemCount)
             {
-                throw new CsvException("無効なファイルフォーマットです。");
+                throw new CsvException("ファイルフォーマットが無効です。");
             }
 
-            var entity = GetEntity(items);
-
-            entities.Add(entity);
+            var product = GetEntity(items);
+            
+            entities.Add(product);
         }
 
         return entities;
