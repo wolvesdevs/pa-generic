@@ -45,7 +45,7 @@ public partial class Gen : Form
             var items = line.Split(',');
             if (items.Length != 3)
             {
-                throw new CsvException();
+                throw new CsvException("ファイルフォーマットが無効です。");
             }
 
             ProductEntity product = new(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
@@ -81,12 +81,12 @@ public partial class Gen : Form
             var items = line.Split(',');
             if (items.Length != 2)
             {
-                throw new CsvException();
+                throw new CsvException("ファイルフォーマットが無効です。");
             }
 
-            StockEntity product = new(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
+            StockEntity stock = new(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
 
-            entities.Add(product);
+            entities.Add(stock);
         }
 
         dataGridView1.DataSource = entities;
@@ -116,7 +116,7 @@ public partial class Gen : Form
             var items = line.Split(',');
             if (items.Length != 3)
             {
-                throw new CsvException();
+                throw new CsvException("ファイルフォーマットが無効です。");
             }
 
             ProductEntity product = new(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
@@ -151,12 +151,12 @@ public partial class Gen : Form
             var items = line.Split(',');
             if (items.Length != 2)
             {
-                throw new CsvException();
+                throw new CsvException("ファイルフォーマットが無効です。");
             }
 
-            StockEntity product = new(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
+            StockEntity stock = new(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
 
-            entities.Add(product);
+            entities.Add(stock);
         }
 
         dataGridView1.DataSource = entities;
