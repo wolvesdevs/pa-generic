@@ -53,32 +53,8 @@ public partial class Gen : Form
     /// <param name="e"></param>
     private void ProductCsv2Button_Click(object sender, EventArgs e)
     {
-        var lines = File.ReadAllLines("Product.csv");
-        bool isFirst = true;
-        List<ProductEntity> entities = new();
-
-        foreach (var line in lines)
-        {
-            if (isFirst)
-            {
-                isFirst = false;
-                continue;
-            }
-
-            var items = line.Split(',');
-            if (items.Length != 3)
-            {
-                throw new CsvException("ファイルフォーマットが無効です。");
-            }
-
-            ProductEntity product = new(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
-
-            entities.Add(product);
-        }
-
-        dataGridView1.DataSource = entities;
-
-
+        ProductCsv2 productCsv2 = new();
+        dataGridView1.DataSource = productCsv2.GetAll();
     }
 
     /// <summary>
@@ -88,32 +64,8 @@ public partial class Gen : Form
     /// <param name="e"></param>
     private void StockCsv2Button_Click(object sender, EventArgs e)
     {
-        var lines = File.ReadAllLines("Stock.csv");
-        bool isFirst = true;
-        List<StockEntity> entities = new();
-
-        foreach (var line in lines)
-        {
-            if (isFirst)
-            {
-                isFirst = false;
-                continue;
-            }
-
-            var items = line.Split(',');
-            if (items.Length != 2)
-            {
-                throw new CsvException("ファイルフォーマットが無効です。");
-            }
-
-            StockEntity stock = new(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]));
-
-            entities.Add(stock);
-        }
-
-        dataGridView1.DataSource = entities;
-
-
+        StockCsv2 stockCsv2 = new();
+        dataGridView1.DataSource = stockCsv2.GetAll();
     }
 
     //private void button1_Click(object sender, EventArgs e)
