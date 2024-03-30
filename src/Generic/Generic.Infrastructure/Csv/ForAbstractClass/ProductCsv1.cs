@@ -10,7 +10,7 @@ public class ProductCsv1 : CsvBase<ProductEntity>
 
     public override ProductEntity GetEntity(string[] items)
     {
-        return new ProductEntity(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
+        return new(Convert.ToInt32(items[0]), items[1], Convert.ToInt32(items[2]));
     }
 }
 
