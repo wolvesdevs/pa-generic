@@ -29,9 +29,9 @@ public abstract class CsvBase<T> where T : IEntity
                 throw new CsvException("ファイルフォーマットが無効です。");
             }
 
-            var product = GetEntity(items);
-            
-            entities.Add(product);
+            var entity = GetEntity(items);
+
+            entities.Add(entity);
         }
 
         return entities;
