@@ -1,6 +1,6 @@
-﻿using Generic.Domain.Entities;
-using Generic.Domain.Exceptions;
+﻿using Generic.Domain.Exceptions;
 using Generic.Domain.Repositories;
+using System.Runtime.CompilerServices;
 
 namespace Generic.Infrastructure.Csv;
 
@@ -29,7 +29,7 @@ public abstract class CsvBase<T> where T : IEntity
                 throw new CsvException("ファイルフォーマットが無効です。");
             }
 
-            T entity = GetEntity(items);
+            var entity = GetEntity(items);
 
             entities.Add(entity);
         }
