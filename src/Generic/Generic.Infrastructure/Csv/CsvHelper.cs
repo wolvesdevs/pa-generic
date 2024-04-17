@@ -26,9 +26,9 @@ public static class CsvHelper
                 throw new CsvException("ファイルフォーマットが無効です。");
             }
 
-            var stock = func(items);
+            var entity = func(items);
 
-            entities.Add(stock);
+            entities.Add(entity);
         }
 
         return entities;
