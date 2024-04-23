@@ -1,13 +1,15 @@
 ﻿using Generic.Domain.Entities;
 using Generic.Domain.Exceptions;
+using Generic.Domain.Repositories;
 
 namespace Generic.Infrastructure.Csv;
 
 public static class CsvHelper
 {
-    public static IEnumerable<T> GetALL<T>(string filePath, int itemCount, Func<string[], T> func)
+    public static IEnumerable<T> GetAll<T>(string filePath, int itemCount, Func<string[], T> func) where T : IEntity
     {
-        var lines = File.ReadAllLines("Stock.csv");
+        var lines = File.ReadAllLines(filePath);
+
         bool isFirst = true;
         List<T> entities = new();
 
@@ -20,14 +22,15 @@ public static class CsvHelper
             }
 
             var items = line.Split(',');
-            if (items.Length != 2)
+
+            if (items.Length != itemCount)
             {
                 throw new CsvException("ファイルフォーマットが無効です。");
             }
 
-            var enitty = func(items);
+            var entity = func(items);
 
-            entities.Add(enitty);
+            entities.Add(entity);
         }
 
         return entities;
