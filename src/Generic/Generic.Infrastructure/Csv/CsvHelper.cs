@@ -9,6 +9,7 @@ public static class CsvHelper
     public static IEnumerable<T> GetAll<T>(string filePath, int itemCount, Func<string[], T> func) where T : IEntity
     {
         var lines = File.ReadAllLines(filePath);
+
         bool isFirst = true;
         List<T> entities = new();
 
@@ -21,6 +22,7 @@ public static class CsvHelper
             }
 
             var items = line.Split(',');
+
             if (items.Length != itemCount)
             {
                 throw new CsvException("ファイルフォーマットが無効です。");
