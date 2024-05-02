@@ -5,7 +5,7 @@ namespace Generic.Infrastructure.Csv.ForGenericMethod;
 
 public class StockCsv2
 {
-    public object GetAll()
+    public IEnumerable<StockEntity> GetAll()
     {
         return CsvHelper.GetAll("Stock.csv", 2, items => new StockEntity(Convert.ToInt32(items[0]), Convert.ToInt32(items[1])));
     }
