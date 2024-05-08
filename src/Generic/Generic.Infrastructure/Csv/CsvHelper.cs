@@ -6,7 +6,7 @@ namespace Generic.Infrastructure.Csv;
 
 public static class CsvHelper
 {
-    public static IEnumerable<T> GetALl<T>(string filePath, int itemCount, Func<string[], T> func) where T : IEntity
+    public static IEnumerable<T> GetAll<T>(string filePath, int itemCount, Func<string[], T> func) where T : IEntity
     {
         var lines = File.ReadAllLines(filePath);
         bool isFirst = true;
