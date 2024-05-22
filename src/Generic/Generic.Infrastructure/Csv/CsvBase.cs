@@ -1,10 +1,10 @@
-﻿using Generic.Domain.Entities;
-using Generic.Domain.Exceptions;
+﻿using Generic.Domain.Exceptions;
 using Generic.Domain.Repositories;
+using System.Runtime.CompilerServices;
 
 namespace Generic.Infrastructure.Csv;
 
-public abstract class CsvBase<T> where T: IEntity
+public abstract class CsvBase<T> where T : IEntity
 {
     public abstract string FilePath { get; }
     public abstract int ItemCount { get; }
