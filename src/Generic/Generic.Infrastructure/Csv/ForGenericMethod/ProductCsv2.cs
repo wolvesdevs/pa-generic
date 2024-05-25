@@ -2,7 +2,6 @@
 using Generic.Domain.Exceptions;
 
 namespace Generic.Infrastructure.Csv.ForGenericMethod;
-
 public class ProductCsv2
 {
 

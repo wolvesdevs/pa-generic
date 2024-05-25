@@ -5,7 +5,6 @@ using Generic.Domain.Repositories;
 namespace Generic.Infrastructure.Csv;
 
 
-
 //public abstract class CsvBase<T> where T : IEntity
 //{
 //    public abstract string FilePath { get; }

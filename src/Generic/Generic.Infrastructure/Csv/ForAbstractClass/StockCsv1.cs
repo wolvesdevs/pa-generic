@@ -2,7 +2,6 @@
 using Generic.Domain.Exceptions;
 
 namespace Generic.Infrastructure.Csv.ForAbstractClass;
-
 public class StockCsv1
 {
 
