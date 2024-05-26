@@ -2,7 +2,6 @@
 using Generic.Domain.Exceptions;
 
 namespace Generic.Infrastructure.Csv.ForAbstractClass;
-
 public class ProductCsv1 : CsvBase<ProductEntity>
 {
     public override string FilePath => "Product.csv";
