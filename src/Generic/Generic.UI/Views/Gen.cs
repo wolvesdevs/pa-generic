@@ -1,4 +1,5 @@
-﻿using Generic.Domain.Entities;
+﻿using Generic.Domain;
+using Generic.Domain.Entities;
 using Generic.Domain.Exceptions;
 using Generic.Infrastructure.Csv.ForAbstractClass;
 using Generic.Infrastructure.Csv.ForGenericMethod;
