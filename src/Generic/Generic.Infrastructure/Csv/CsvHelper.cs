@@ -1,5 +1,6 @@
 ﻿using Generic.Domain.Entities;
 using Generic.Domain.Exceptions;
+using Generic.Domain.Repositories;
 
 namespace Generic.Infrastructure.Csv;
 public static class CsvHelper
